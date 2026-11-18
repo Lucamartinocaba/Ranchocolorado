@@ -3,28 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Asegúrate de que tu archivo CSS se llame exactamente "style.css" -->
-    <link rel="stylesheet" href="style2.css">
-    <title>Galeria</title>
+    <title>Galería - Reserva Rancho Colorado</title>
+    <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 
-    <h1>Mi Galería de Fotos</h1>
+    <!-- Barra de navegación idéntica a tu diseño -->
+    <header class="navbar">
+        <div class="logo">Reserva Rancho Colorado</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="#">Servicios &#9662;</a></li>
+                <li><a href="#">Tarifas</a></li>
+                <li><a href="#">Contacto</a></li>
+                <li><a href="galeria.html" class="activo">Galería</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <div class="galeria">
-        <div class="foto">
-            <img src="garza.png" alt="Descripción de la foto 1">
-        </div>
-        <div class="foto">
-            <img src="pajarito.png" alt="Descripción de la foto 2">
-        </div>
-        <div class="foto">
-            <img src="fuego.png" alt="Descripción de la foto 3">
-        </div>
-        <div class="foto">
-            <img src="atardecer.png" alt="Descripción de la foto 4">
-        </div>
-    </div>
+    <!-- Contenedor principal -->
+    <main class="contenedor-principal">
+        <section class="tarjeta-galeria">
+            <h1>Explora la reserva natural Rancho Colorado</h1>
+            <p class="subtitulo">Conoce nuestros paisajes, senderos y espacios de descanso.</p>
+
+            <!-- Sección con el mismo estilo de borde fino que tu formulario -->
+            <fieldset class="grupo-fotos">
+                <legend>Paisajes y Naturaleza</legend>
+                
+                <div class="grid-galeria">
+                    <div class="item-foto">
+                        <img src="garza.png" alt="Sendero en el bosque">
+                        <span>Sendero del Mirador</span>
+                    </div>
+                    <div class="item-foto">
+                        <img src="pajarito.png" alt="Laguna de la reserva">
+                        <span>Laguna Principal</span>
+                    </div>
+                    <div class="item-foto">
+                        <img src="fuego.png" alt="Atardecer en Rancho Colorado">
+                        <span>Atardecer en el valle</span>
+                    </div>
+                    <div class="item-foto">
+                        <img src="atardecer.png" alt="Atardecer en Rancho Colorado">
+                        <span>Atardecer en el valle</span>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset class="grupo-fotos">
+                <legend>Cabañas y Estadía</legend>
+                
+                <div class="grid-galeria">
+                    <div class="item-foto">
+                        <img src="foto4.jpg" alt="Cabaña de madera">
+                        <span>Cabaña del Bosque</span>
+                    </div>
+                    <div class="item-foto">
+                        <img src="foto5.jpg" alt="Zona de descanso">
+                        <span>Área de fogón</span>
+                    </div>
+                    <div class="item-foto">
+                        <img src="foto6.jpg" alt="Vista desde la terraza">
+                        <span>Terraza panorámica</span>
+                    </div>
+                </div>
+            </fieldset>
+
+        </section>
+    </main>
 
 </body>
 </html>
