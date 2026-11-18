@@ -70,6 +70,75 @@
 
         </section>
     </main>
+<!-- Visor Lightbox para ampliar las fotos -->
+    <div id="lightbox" class="lightbox">
+        <span class="cerrar">&times;</span>
+        <button class="flecha prev" onclick="cambiarFoto(-1)">&#10094;</button>
+        
+        <div class="lightbox-contenido">
+            <img id="img-ampliada" src="" alt="Vista ampliada">
+            <p id="caption-ampliado"></p>
+        </div>
+        
+        <button class="flecha next" onclick="cambiarFoto(1)">&#10095;</button>
+    </div>
 
+    <script>
+        const lightbox = document.getElementById('lightbox');
+        const imgAmpliada = document.getElementById('img-ampliada');
+        const captionAmpliado = document.getElementById('caption-ampliado');
+        const cerrarBtn = document.querySelector('.cerrar');
+        
+        // Selecciona todas las imágenes dentro de las tarjetas
+        const tarjetas = document.querySelectorAll('.item-foto');
+        let indiceActual = 0;
+
+        // Abre el visor al hacer clic en cualquier foto
+        tarjetas.forEach((tarjeta, index) => {
+            tarjeta.addEventListener('click', () => {
+                indiceActual = index;
+                mostrarFoto(indiceActual);
+                lightbox.classList.add('activo');
+            });
+        });
+
+        function mostrarFoto(index) {
+            // Permite dar la vuelta si llegas al inicio o al final
+            if (index >= tarjetas.length) indiceActual = 0;
+            if (index < 0) indiceActual = tarjetas.length - 1;
+
+            const img = tarjetas[indiceActual].querySelector('img');
+            const texto = tarjetas[indiceActual].querySelector('span');
+
+            imgAmpliada.src = img.src;
+            captionAmpliado.textContent = texto ? texto.textContent : '';
+        }
+
+        function cambiarFoto(direccion) {
+            indiceActual += direccion;
+            mostrarFoto(indiceActual);
+        }
+
+        // Cerrar con la X
+        cerrarBtn.addEventListener('click', () => {
+            lightbox.classList.remove('activo');
+        });
+
+        // Cerrar al hacer clic fuera de la foto
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.remove('activo');
+            }
+        });
+
+        // Control con el teclado (Flechas izquierda/derecha y Escape)
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('activo')) return;
+            
+            if (e.key === 'ArrowRight') cambiarFoto(1);
+            if (e.key === 'ArrowLeft') cambiarFoto(-1);
+            if (e.key === 'Escape') lightbox.classList.remove('activo');
+        });
+    </script>
 </body>
 </html>
