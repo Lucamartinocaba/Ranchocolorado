@@ -1,27 +1,130 @@
+/* Reseteo básico y tipografía */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Fondo verde oliva medio de la página */
 body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    background-color: #f4f4f4;
-    text-align: center;
+    background-color: #4d6b28;
+    color: #162610;
 }
 
-.galeria {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 15px;
-    max-width: 1000px;
-    margin: 0 auto;
+/* Barra superior verde bosque oscuro */
+.navbar {
+    background-color: #2c4920;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
 }
 
-.foto img {
+.logo {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: opacity 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.activo {
+    opacity: 0.8;
+    text-decoration: underline;
+}
+
+/* Contenedor que centra la tarjeta */
+.contenedor-principal {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+/* Tarjeta central verde salvia */
+.tarjeta-galeria {
+    background-color: #68883b;
     width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    max-width: 900px;
+    padding: 35px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-.foto img:hover {
-    transform: scale(1.05);
+.tarjeta-galeria h1 {
+    text-align: center;
+    color: #162610;
+    font-size: 1.6rem;
+    margin-bottom: 8px;
+}
+
+.subtitulo {
+    text-align: center;
+    color: #1e3316;
+    font-size: 0.95rem;
+    margin-bottom: 30px;
+}
+
+/* Marcos internos con borde fino idénticos a "Datos de contacto" */
+.grupo-fotos {
+    border: 1px solid #9ab574;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 25px;
+}
+
+.grupo-fotos legend {
+    color: #162610;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0 10px;
+}
+
+/* Cuadrícula adaptable para las fotos */
+.grid-galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 18px;
+    margin-top: 10px;
+}
+
+.item-foto {
+    background-color: #ffffff;
+    padding: 8px;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    transition: transform 0.25s ease;
+}
+
+.item-foto:hover {
+    transform: translateY(-4px);
+}
+
+.item-foto img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 4px;
+    display: block;
+}
+
+.item-foto span {
+    display: block;
+    text-align: center;
+    color: #162610;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-top: 8px;
 }
