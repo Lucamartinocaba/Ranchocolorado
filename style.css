@@ -240,7 +240,10 @@ input[type="radio"] {
     margin-right: 8px;
     accent-color: #2d5a27;
 }
-
+texto{
+    width: 2rem;
+    max-width: 350px;
+}
 fieldset p + label,
 fieldset br + label {
     display: inline-block;
